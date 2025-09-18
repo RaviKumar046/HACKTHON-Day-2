@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stage_02</title>
+</head>
+<style>
+  body{
+    background-color: lightblue;
+    text-align: center;
+    font-family: Arial, sans-serif;
+  }
+  table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+  }
+  th, td {
+    border: 1px solid #030000;
+    padding: 10px;
+    text-align: center;
+  }
+  th {
+    background-color: darkblue;
+    color: white;
+  }
+  caption {
+    caption-side: top;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+  }
+  tfoot td {
+    font-weight: bold;
+    background-color: #f2f2f2;
+  }
+  .link{
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: darkblue;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+  .link:hover{
+    background-color: blue;
+  }
+  .linkN{
+    display: inline-block;
+    margin-top: 20px;
+    margin-left: 20px;
+    padding: 10px 20px;
+    background-color: green;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+
+</style>
+<body>
+  <table>
+  <caption>
+     Mess menu
+  </caption>
+  <thead>
+    <tr>
+      <th scope="col">Mess menu</th>
+      <th scope="col">Monday</th>
+      <th scope="col">Tuesday</th>
+      <th scope="col">Wednesday</th> 
+      <th scope="col">Thursday</th>
+      <th scope="col">Friday</th> 
+      <th scope="col">Saturday</th>
+      <th scope="col">Sunday</th> 
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Breakfast</th>
+      <td>Aloo Pyaaz Paratha</td>
+      <td>pav bhaji</td>
+      <td>Aloo puri</td>
+      <td>Methi Paratha</td>
+      <td>Idli Sambar</td>
+      <td>Mendu BAda</td>
+      <td>Chole Bhature</td>
+    </tr>
+    <tr>
+      <th scope="row">Lunch</th>
+      <td>A</td>
+      <td>B</td>
+      <td>A</td>
+      <td>B</td>
+      <td>A</td>
+      <td>B</td>
+      <td>A</td>
+    </tr>
+    <tr>
+      <th scope="row">Snacks</th>
+      <td>1</td>
+      <td>2</td>
+      <td>1</td>
+      <td>2</td>
+      <td>1</td>
+      <td>2</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th scope="row">Diner</th>
+      <td>a</td>
+      <td>b</td>
+      <td>a</td>
+      <td>b</td>  
+      <td>a</td>
+      <td>b</td>
+      <td>a</td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td colspan="8">End of the mess menu</td>
+    </tr>
+  </tfoot>
+</table>
+  <p class="Preference">Select your food Preference</p>
+  <input type="checkbox" id="veg" name="veg" value="veg" class="veg">
+  <label for="veg">Veg</label>
+  <input type="checkbox" id="nonveg" name="nonveg" value="nonveg" class="nonveg">
+  <label for="nonveg">Non-Veg</label>
+  <br />
+
+
+<a href="http://127.0.0.1:5500/index.html" class="link">Previous</a>
+<a href="http://127.0.0.1:5500/page_03.html" class="linkN">Save/Next</a>
+</body>
+<script>
+  document.querySelector('.linkN').addEventListener('click', function(event) {
+     
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    let isChecked = false;
+    checkboxes.forEach(checkbox => {
+      if (checkbox.checked) {
+        isChecked = true;
+      }
+    });
+
+    if (!isChecked) {
+      event.preventDefault(); 
+      alert('Please select at least one food preference (Veg or Non-Veg).');
+    }
+  });
+</script>
+</html>

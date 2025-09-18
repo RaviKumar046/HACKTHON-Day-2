@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stage_04</title>
+</head>
+<style>
+  body{
+    background-color: lightblue;
+    text-align: center;
+    font-family: Arial, sans-serif;
+  }
+  .linkp{
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: darkblue;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+  .linkp:hover{
+    background-color: blue;
+  }
+  .linkN{
+    display: inline-block;
+    margin-top: 20px;
+    margin-left: 20px;
+    padding: 10px 20px;
+    background-color: green;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+  .linkN:hover{
+    background-color: darkgreen;
+  }
+  .food{
+    padding: 10px;
+    width: 200px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-top: 20px;
+  }
+  .vms{
+    color: darkblue;
+    font-size: 40px;
+    margin-top: 20px;
+  }
+  .Preference{
+    text-decoration: underline;
+    margin-top: 20px;
+  }
+  .veg, .nonveg{
+    margin: 10px;
+    transform: scale(1.5);
+  }
+  label{
+    font-weight: bold;
+    margin-right: 10px;
+  }
+
+</style>
+<body>
+  <h1>Non-Vegetarian Menu Selection</h1>
+    <p class="Preference">Select your food Preference</p>
+  <input type="checkbox" id="veg" name="veg" value="veg" class="veg">
+  <label for="veg">A</label>
+  <input type="checkbox" id="nonveg" name="nonveg" value="nonveg" class="nonveg">
+  <label for="nonveg">B</label>
+    <input type="checkbox" id="veg" name="veg" value="veg" class="veg">
+  <label for="veg">C</label>
+  <input type="checkbox" id="nonveg" name="nonveg" value="nonveg" class="nonveg">
+  <label for="nonveg">D</label>
+    <input type="checkbox" id="veg" name="veg" value="veg" class="veg">
+  <label for="veg">E</label>
+  <input type="checkbox" id="nonveg" name="nonveg" value="nonveg" class="nonveg">
+  <label for="nonveg">F</label>
+    <input type="checkbox" id="veg" name="veg" value="veg" class="veg">
+  <label for="veg">G</label>
+  <input type="checkbox" id="nonveg" name="nonveg" value="nonveg" class="nonveg">
+  <label for="nonveg">H</label>
+   <input type="checkbox" id="veg" name="veg" value="veg" class="veg">
+  <label for="veg">I</label>
+  <input type="checkbox" id="nonveg" name="nonveg" value="nonveg" class="nonveg">
+  <label for="nonveg">J</label>
+    <input type="checkbox" id="veg" name="veg" value="veg" class="veg">
+  <label for="veg">K</label>
+  <input type="checkbox" id="nonveg" name="nonveg" value="nonveg" class="nonveg">
+  <label for="nonveg">L</label>
+    <input type="checkbox" id="veg" name="veg" value="veg" class="veg">
+  <label for="veg">M</label>
+  <input type="checkbox" id="nonveg" name="nonveg" value="nonveg" class="nonveg">
+  <label for="nonveg">N</label>
+    <input type="checkbox" id="veg" name="veg" value="veg" class="veg">
+  <label for="veg">O</label>
+  <input type="checkbox" id="nonveg" name="nonveg" value="nonveg" class="nonveg">
+  <label for="nonveg">P</label>
+
+  <br />
+  <a href="http://127.0.0.1:5500/page_03.html" class="linkp">Previous</a>
+   <a href="http://127.0.0.1:5500/page_05.html" class="linkN">Save/Next</a>
+</body>
+<script>
+   document.querySelector('.linkN').addEventListener('click', function(event) {
+     
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    let isChecked = false;
+    checkboxes.forEach(checkbox => {
+      if (checkbox.checked) {
+        isChecked = true;
+      }
+    });
+    if (!isChecked) {
+      event.preventDefault(); 
+      alert('Please select at least one food preference before proceeding.');
+    }
+  });
+</script>
+</html>

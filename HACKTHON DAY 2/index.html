@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student's Mess Feedback</title>
+</head>
+<style>
+  body{
+    background-color: lightblue;
+    text-align: center;
+    font-family: Arial, sans-serif;
+  }
+  input{
+    padding: 10px;
+    width: 300px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  h1{
+    color: darkblue;
+  }
+  .submit{
+    padding: 10px 20px;
+    background-color: darkblue;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .page_02{
+    padding: 10px 20px;
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    align-items: bottom;
+  }
+  .details{
+    text-decoration: underline;
+  }
+  label{
+    font-weight: bold;
+    margin-right: 10px;
+  }
+  .name, .roll, .sem, .dep, .Hostel{
+    display: inline-block;
+    width: 150px;
+    text-align: right;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    margin-left: 10px;
+  font-weight: bold;
+
+  }
+  .Preference{
+    text-decoration: underline;
+    margin-top: 20px;
+  }
+  .veg, .nonveg{
+    margin-right: 20px;
+  }
+  .link{
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: darkblue;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+
+  }
+  .link:hover{
+    background-color: blue;
+  }
+
+.dep{
+  margin-left: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 300px;
+}
+
+
+
+</style>
+<body>
+
+<h1 class="details">Personal details</h1>
+<label class="name"> Student's Name:</label>
+<input  type="text" placeholder="Name" required class="namep" > <br><br>
+<label class="roll">Roll Number:</label>
+<input type="number" placeholder="Roll Number" required class="rollp"> <br><br>
+
+ Select your Department :
+<select name="Branch" class="dep" >
+<option value="ECE" >ECE</option>
+<option value="ECE(VLSI)" >ECE(VLSI)</option>
+<option value="CSE">CSE</option>
+<option value="AIDS">AIDS</option>
+<option value="EE">EE</option>
+<option value="ME">ME</option>
+ </select>
+ <br >
+  <label class="sem">Semester:</label>
+<input type="number" placeholder="Semester" required class="semp"> <br><br>
+<label class="Hostel">Hostel Name:</label>
+<input type="text" placeholder="Hostel Name" required class="hostelp"> <br><br>
+
+
+<h5 class="Preference">food Preference</h5>
+  
+<label class="veg" for="veg">
+<input type="checkbox" value="veg" name="food Preference" id="101">Veg
+</label>
+<label class="nonveg" for="nonveg">
+<input type="checkbox" value="nonveg" name="food Preference" id="102">Non-Veg
+</label>
+<a href="http://127.0.0.1:5500/page_02.html" class="link">Save/Next</a>
+</body>
+<script>
+  document.querySelector('.link').addEventListener('click', function(event) {
+    const name = document.querySelector('.namep').value;
+    const roll = document.querySelector('.rollp').value;
+    const sem = document.querySelector('.semp').value;
+    const hostel = document.querySelector('.hostelp').value;
+
+    if (!name || !roll || !sem || !hostel) {
+      alert('Please fill in all required fields.');
+      event.preventDefault();  
+    }
+  });
+</script>
+</html>
