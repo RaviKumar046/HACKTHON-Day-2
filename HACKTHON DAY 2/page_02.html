@@ -3,152 +3,331 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Stage_02</title>
+  <title>Student Mess Feedback - Stage 2</title>
+  <style>
+    body {
+      background: linear-gradient(180deg, #b7e7ff 0%, #d5f0ff 100%);
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 24px;
+      color: #0d2f5d;
+    }
+
+    .card {
+      max-width: 900px;
+      margin: 0 auto;
+      background-color: #ffffff;
+      padding: 24px;
+      border-radius: 14px;
+      box-shadow: 0 10px 24px rgba(13, 47, 93, 0.12);
+    }
+
+    h1 {
+      margin-top: 0;
+      text-align: center;
+    }
+
+    table {
+      width: 100%;
+      margin: 18px 0;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+
+    th,
+    td {
+      border: 1px solid #1d3f69;
+      padding: 8px;
+      text-align: center;
+    }
+
+    th {
+      background-color: #0d4da4;
+      color: #ffffff;
+    }
+
+    .preference {
+      text-align: center;
+      margin-top: 12px;
+      font-weight: 700;
+    }
+
+    .choices {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 8px;
+    }
+
+    .menu-section {
+      display: none;
+      margin-top: 16px;
+    }
+
+    .menu-section.show {
+      display: block;
+    }
+
+    .rating-title {
+      margin-top: 12px;
+      margin-bottom: 8px;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .hint {
+      margin: 6px 0;
+      text-align: center;
+      font-size: 13px;
+      color: #244b7d;
+    }
+
+    .rating {
+      width: 100%;
+      padding: 6px;
+      border: 1px solid #1d3f69;
+      border-radius: 6px;
+      background-color: #ffffff;
+    }
+
+    .actions {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .btn,
+    .btn-link {
+      border: none;
+      border-radius: 8px;
+      padding: 10px 20px;
+      font-size: 15px;
+      font-weight: 700;
+      color: #ffffff;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .btn-link {
+      background-color: #0d4da4;
+    }
+
+    .btn-link:hover {
+      background-color: #0a3b7d;
+    }
+
+    .btn {
+      background-color: #138a49;
+    }
+
+    .btn:hover {
+      background-color: #0f6f3b;
+    }
+  </style>
 </head>
-<style>
-  body{
-    background-color: lightblue;
-    text-align: center;
-    font-family: Arial, sans-serif;
-  }
-  table {
-    width: 80%;
-    margin: 20px auto;
-    border-collapse: collapse;
-  }
-  th, td {
-    border: 1px solid #030000;
-    padding: 10px;
-    text-align: center;
-  }
-  th {
-    background-color: darkblue;
-    color: white;
-  }
-  caption {
-    caption-side: top;
-    font-size: 1.5em;
-    margin-bottom: 10px;
-  }
-  tfoot td {
-    font-weight: bold;
-    background-color: #f2f2f2;
-  }
-  .link{
-    display: inline-block;
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: darkblue;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-  }
-  .link:hover{
-    background-color: blue;
-  }
-  .linkN{
-    display: inline-block;
-    margin-top: 20px;
-    margin-left: 20px;
-    padding: 10px 20px;
-    background-color: green;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-  }
-
-</style>
 <body>
-  <table>
-  <caption>
-     Mess menu
-  </caption>
-  <thead>
-    <tr>
-      <th scope="col">Mess menu</th>
-      <th scope="col">Monday</th>
-      <th scope="col">Tuesday</th>
-      <th scope="col">Wednesday</th> 
-      <th scope="col">Thursday</th>
-      <th scope="col">Friday</th> 
-      <th scope="col">Saturday</th>
-      <th scope="col">Sunday</th> 
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">Breakfast</th>
-      <td>Aloo Pyaaz Paratha</td>
-      <td>pav bhaji</td>
-      <td>Aloo puri</td>
-      <td>Methi Paratha</td>
-      <td>Idli Sambar</td>
-      <td>Mendu BAda</td>
-      <td>Chole Bhature</td>
-    </tr>
-    <tr>
-      <th scope="row">Lunch</th>
-      <td>A</td>
-      <td>B</td>
-      <td>A</td>
-      <td>B</td>
-      <td>A</td>
-      <td>B</td>
-      <td>A</td>
-    </tr>
-    <tr>
-      <th scope="row">Snacks</th>
-      <td>1</td>
-      <td>2</td>
-      <td>1</td>
-      <td>2</td>
-      <td>1</td>
-      <td>2</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th scope="row">Diner</th>
-      <td>a</td>
-      <td>b</td>
-      <td>a</td>
-      <td>b</td>  
-      <td>a</td>
-      <td>b</td>
-      <td>a</td>
-    </tr>
-  </tbody>
-  <tfoot>
-    <tr>
-      <td colspan="8">End of the mess menu</td>
-    </tr>
-  </tfoot>
-</table>
-  <p class="Preference">Select your food Preference</p>
-  <input type="checkbox" id="veg" name="veg" value="veg" class="veg">
-  <label for="veg">Veg</label>
-  <input type="checkbox" id="nonveg" name="nonveg" value="nonveg" class="nonveg">
-  <label for="nonveg">Non-Veg</label>
-  <br />
+  <main class="card">
+    <h1>Mess Weekly Menu</h1>
+    <form id="preferenceForm" novalidate>
+      <p class="preference">Step 1: Select your food preference</p>
+      <div class="choices">
+        <label><input type="radio" id="veg" name="foodPreference" value="veg"> Veg</label>
+        <label><input type="radio" id="nonVeg" name="foodPreference" value="nonveg"> Non-Veg</label>
+      </div>
 
+      <div id="menuSection" class="menu-section" aria-live="polite">
+        <p class="preference">Step 2: Menu based on your selected preference</p>
+        <p class="hint">Only one menu is shown based on your choice.</p>
 
-<a href="http://127.0.0.1:5500/index.html" class="link">Previous</a>
-<a href="http://127.0.0.1:5500/page_03.html" class="linkN">Save/Next</a>
-</body>
-<script>
-  document.querySelector('.linkN').addEventListener('click', function(event) {
-     
-    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
-    let isChecked = false;
-    checkboxes.forEach(checkbox => {
-      if (checkbox.checked) {
-        isChecked = true;
+        <table>
+          <caption id="menuCaption">Selected menu schedule</caption>
+          <thead>
+            <tr>
+              <th scope="col">Day</th>
+              <th scope="col">Breakfast</th>
+              <th scope="col">Lunch</th>
+              <th scope="col">Snacks</th>
+              <th scope="col">Dinner</th>
+              <th scope="col">Rating (1-5)</th>
+            </tr>
+          </thead>
+          <tbody id="menuBody"></tbody>
+        </table>
+        <p class="rating-title">Step 3: Rate each day</p>
+      </div>
+
+      <div class="actions">
+        <a href="index.html" class="btn-link">Previous</a>
+        <button class="btn" type="submit">Save / Next</button>
+      </div>
+    </form>
+  </main>
+
+  <script>
+    const preferenceKey = "messFeedback.mealPreference";
+    const menuRatingKey = "messFeedback.menuRatings";
+    const form = document.getElementById("preferenceForm");
+    const vegRadio = document.getElementById("veg");
+    const nonVegRadio = document.getElementById("nonVeg");
+    const menuSection = document.getElementById("menuSection");
+    const menuBody = document.getElementById("menuBody");
+    const menuCaption = document.getElementById("menuCaption");
+
+    const dayNames = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+
+    const vegMenu = {
+      Monday: ["Aloo Paratha", "Rice + Dal", "Poha", "Roti + Dal"],
+      Tuesday: ["Pav Bhaji", "Roti + Paneer", "Sandwich", "Rice + Curry"],
+      Wednesday: ["Aloo Puri", "Rice + Rajma", "Upma", "Roti + Sabzi"],
+      Thursday: ["Methi Paratha", "Roti + Mix Veg", "Bhel", "Rice + Kadhi"],
+      Friday: ["Idli Sambar", "Rice + Sambar", "Sprouts", "Roti + Kofta"],
+      Saturday: ["Medu Vada", "Roti + Chole", "Cutlet", "Fried Rice"],
+      Sunday: ["Chole Bhature", "Special Thali", "Pasta", "Roti + Paneer"]
+    };
+
+    const nonVegMenu = {
+      Monday: ["Egg Bhurji", "Chicken Curry + Rice", "Egg Roll", "Fish Curry"],
+      Tuesday: ["Chicken Sandwich", "Mutton Curry + Roti", "Chicken Puff", "Egg Curry"],
+      Wednesday: ["Omelette Toast", "Chicken Biryani", "Chicken Momos", "Chicken Roast"],
+      Thursday: ["Egg Paratha", "Fish Fry + Rice", "Chicken Nuggets", "Butter Chicken"],
+      Friday: ["Chicken Poha", "Egg Curry + Rice", "Chicken Cutlet", "Keema Masala"],
+      Saturday: ["Boiled Eggs + Toast", "Chicken Korma + Roti", "Fish Fingers", "Chicken Handi"],
+      Sunday: ["Chicken Sausage", "Special Non-Veg Thali", "Chicken Burger", "Mutton Stew"]
+    };
+
+    function optionMarkup(selectedValue) {
+      return [
+        "<option value=''>Select</option>",
+        "<option value='1'" + (selectedValue === "1" ? " selected" : "") + ">1</option>",
+        "<option value='2'" + (selectedValue === "2" ? " selected" : "") + ">2</option>",
+        "<option value='3'" + (selectedValue === "3" ? " selected" : "") + ">3</option>",
+        "<option value='4'" + (selectedValue === "4" ? " selected" : "") + ">4</option>",
+        "<option value='5'" + (selectedValue === "5" ? " selected" : "") + ">5</option>"
+      ].join("");
+    }
+
+    function renderMenu(preference, savedRatings) {
+      const selectedMenu = preference === "veg" ? vegMenu : nonVegMenu;
+      menuCaption.textContent = preference === "veg" ? "Veg menu schedule" : "Non-Veg menu schedule";
+
+      menuBody.innerHTML = dayNames.map(function (day) {
+        const meals = selectedMenu[day];
+        const selectedRating = savedRatings && savedRatings[day] ? String(savedRatings[day]) : "";
+        return (
+          "<tr>" +
+          "<th scope='row'>" + day + "</th>" +
+          "<td>" + meals[0] + "</td>" +
+          "<td>" + meals[1] + "</td>" +
+          "<td>" + meals[2] + "</td>" +
+          "<td>" + meals[3] + "</td>" +
+          "<td><select class='rating' data-day='" + day + "'>" + optionMarkup(selectedRating) + "</select></td>" +
+          "</tr>"
+        );
+      }).join("");
+
+      menuSection.classList.add("show");
+    }
+
+    function getSelectedPreference() {
+      if (vegRadio.checked) {
+        return "veg";
       }
+      if (nonVegRadio.checked) {
+        return "nonveg";
+      }
+      return "";
+    }
+
+    function updateMenuFromSelection(savedRatings) {
+      const selectedPreference = getSelectedPreference();
+      if (!selectedPreference) {
+        menuSection.classList.remove("show");
+        menuBody.innerHTML = "";
+        return;
+      }
+      renderMenu(selectedPreference, savedRatings || {});
+    }
+
+    function loadSavedData() {
+      let selectedPreference = "";
+      let savedRatings = {};
+
+      const savedPreferenceRaw = localStorage.getItem(preferenceKey);
+      if (savedPreferenceRaw) {
+        try {
+          const prefData = JSON.parse(savedPreferenceRaw);
+          if (prefData.selected === "veg" || prefData.selected === "nonveg") {
+            selectedPreference = prefData.selected;
+          }
+        } catch (error) {
+          localStorage.removeItem(preferenceKey);
+        }
+      }
+
+      const savedRatingsRaw = localStorage.getItem(menuRatingKey);
+      if (savedRatingsRaw) {
+        try {
+          const ratingsData = JSON.parse(savedRatingsRaw);
+          if (ratingsData && typeof ratingsData === "object") {
+            savedRatings = ratingsData.ratings || {};
+          }
+        } catch (error) {
+          localStorage.removeItem(menuRatingKey);
+        }
+      }
+
+      if (selectedPreference === "veg") {
+        vegRadio.checked = true;
+      } else if (selectedPreference === "nonveg") {
+        nonVegRadio.checked = true;
+      }
+
+      updateMenuFromSelection(savedRatings);
+    }
+
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const selectedPreference = getSelectedPreference();
+
+      if (!selectedPreference) {
+        alert("Please select one preference: Veg or Non-Veg.");
+        return;
+      }
+
+      const ratingSelects = Array.from(document.querySelectorAll(".rating"));
+      const ratings = {};
+
+      for (let i = 0; i < ratingSelects.length; i += 1) {
+        const select = ratingSelects[i];
+        const day = select.getAttribute("data-day");
+        const value = select.value;
+        if (!value) {
+          alert("Please provide a rating for every day before proceeding.");
+          return;
+        }
+        ratings[day] = Number(value);
+      }
+
+      localStorage.setItem(preferenceKey, JSON.stringify({ selected: selectedPreference }));
+      localStorage.setItem(menuRatingKey, JSON.stringify({ selected: selectedPreference, ratings: ratings }));
+
+      localStorage.removeItem("messFeedback.vegMenuSelections");
+      localStorage.removeItem("messFeedback.nonVegMenuSelections");
+
+      window.location.href = "page_05.html";
     });
 
-    if (!isChecked) {
-      event.preventDefault(); 
-      alert('Please select at least one food preference (Veg or Non-Veg).');
-    }
-  });
-</script>
+    vegRadio.addEventListener("change", function () {
+      updateMenuFromSelection({});
+    });
+
+    nonVegRadio.addEventListener("change", function () {
+      updateMenuFromSelection({});
+    });
+
+    loadSavedData();
+  </script>
+</body>
 </html>
