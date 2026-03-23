@@ -3,24 +3,139 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>End</title>
+  <title>Submission Complete</title>
+  <style>
+    body {
+      background: linear-gradient(180deg, #b7e7ff 0%, #d5f0ff 100%);
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 24px;
+      color: #0d2f5d;
+    }
+
+    .card {
+      max-width: 780px;
+      margin: 0 auto;
+      background-color: #ffffff;
+      padding: 24px;
+      border-radius: 14px;
+      box-shadow: 0 10px 24px rgba(13, 47, 93, 0.12);
+    }
+
+    h1 {
+      text-align: center;
+      margin-top: 0;
+      color: #0d4da4;
+      font-size: 42px;
+    }
+
+    .subtitle {
+      text-align: center;
+      margin-top: 0;
+      font-size: 16px;
+    }
+
+    .section {
+      margin-top: 16px;
+      border: 1px solid #d2deea;
+      border-radius: 10px;
+      padding: 12px;
+      background-color: #f8fcff;
+    }
+
+    .section h2 {
+      margin-top: 0;
+      font-size: 18px;
+      color: #0d4da4;
+    }
+
+    ul {
+      margin: 8px 0 0;
+      padding-left: 20px;
+    }
+
+    .actions {
+      margin-top: 18px;
+      text-align: center;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      border-radius: 8px;
+      background-color: #0d4da4;
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .btn:hover {
+      background-color: #0a3b7d;
+    }
+  </style>
 </head>
-<style>
-  body{
-    background-color: lightblue;
-    text-align: center;
-    font-family: Arial, sans-serif;
-  }
-  .tky{
-    color: darkblue;
-    font-size: 100px;
-    margin-top: 200px;
-    text-shadow: 2px 2px 4px #000000;
-  
-  }
-</style>
 <body>
-  <h1 class="tky">Thank You 😍</h1>
-  
+  <main class="card">
+    <h1>Thank You</h1>
+    <p class="subtitle">Your feedback has been submitted successfully.</p>
+
+    <section class="section">
+      <h2>Submission Summary</h2>
+      <div id="summary">Loading summary...</div>
+    </section>
+
+    <div class="actions">
+      <a href="index.html" class="btn">Fill New Response</a>
+    </div>
+  </main>
+
+  <script>
+    function readJSON(key) {
+      const raw = localStorage.getItem(key);
+      if (!raw) {
+        return null;
+      }
+
+      try {
+        return JSON.parse(raw);
+      } catch (error) {
+        return null;
+      }
+    }
+
+    const personal = readJSON("messFeedback.personalDetails") || {};
+    const preference = readJSON("messFeedback.mealPreference") || {};
+    const menuRatings = readJSON("messFeedback.menuRatings") || {};
+    const review = readJSON("messFeedback.review") || {};
+
+    const preferenceText = preference.selected === "veg"
+      ? "Veg"
+      : preference.selected === "nonveg"
+      ? "Non-Veg"
+      : "Not selected";
+
+    const ratingsObject = menuRatings.ratings || {};
+    const dayLabels = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+    const ratingsText = dayLabels
+      .map(function (day) {
+        return ratingsObject[day] ? day + ": " + ratingsObject[day] + "/5" : "";
+      })
+      .filter(Boolean)
+      .join(", ") || "No ratings submitted";
+
+    document.getElementById("summary").innerHTML =
+      "<ul>" +
+      "<li><strong>Name:</strong> " + (personal.studentName || "-") + "</li>" +
+      "<li><strong>Roll Number:</strong> " + (personal.rollNumber || "-") + "</li>" +
+      "<li><strong>Department:</strong> " + (personal.department || "-") + "</li>" +
+      "<li><strong>Semester:</strong> " + (personal.semester || "-") + "</li>" +
+      "<li><strong>Hostel:</strong> " + (personal.hostelName || "-") + "</li>" +
+      "<li><strong>Food Preference:</strong> " + preferenceText + "</li>" +
+      "<li><strong>Day-wise Ratings:</strong> " + ratingsText + "</li>" +
+      "<li><strong>Mess Feedback:</strong> " + (review.messFeedback || "-") + "</li>" +
+      "<li><strong>Web Page Feedback:</strong> " + (review.websiteFeedback || "-") + "</li>" +
+      "<li><strong>Uploaded File:</strong> " + (review.foodPhotoName || "No file uploaded") + "</li>" +
+      "</ul>";
+  </script>
 </body>
 </html>
